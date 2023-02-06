@@ -13,7 +13,7 @@
 
 import { createBrowserRouter } from 'react-router-dom';
 import Layout from './components/Layout';
-import Clients from './pages/Index';
+import Index from './pages/Index';
 import NewClient from './pages/NewClient';
 
 const router = createBrowserRouter([
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <Clients />
+                element: <Index />
             },
             {
                 path: '/clients/new',
