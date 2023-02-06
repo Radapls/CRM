@@ -12,10 +12,26 @@
  */
 
 import { createBrowserRouter } from 'react-router-dom';
+import Layout from './components/Layout';
+import Clients from './pages/Index';
+import NewClient from './pages/NewClient';
 
 const router = createBrowserRouter([
-    { path: '/', element: <h1>Home</h1> },
-    { path: '/us', element: <h1>Us</h1> }
+    {
+        path: '/',
+        element: <Layout />,
+        children: [
+            {
+                index: true,
+                element: <Clients />
+            },
+            {
+                path: '/clients/new',
+                element: <NewClient />
+            }
+    ]
+    }
+
 ])
 
 export default router
