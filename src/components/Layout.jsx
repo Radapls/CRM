@@ -11,9 +11,12 @@
  * @date Monday, 6th February 2023
  */
 
-import { Link, Outlet } from 'react-router-dom'
+import { Link, Outlet, useLocation } from 'react-router-dom'
 
 function Layout() {
+
+    const location = useLocation()
+
   return (
     <div className='md:flex md:min-h-screen'>
 
@@ -21,8 +24,24 @@ function Layout() {
             <h2 className='text-4xl font-black text-center text-white'>CRM - Clients</h2>
 
             <nav className='mt-10'>
-                <Link className='text-2xl block mt-2 hover:text-blue-300 text-white font-semibold' to="/">Clients</Link>
-                <Link className='text-2xl block mt-2 hover:text-blue-300 text-white font-semibold' to="/clients/new">New client</Link>
+                <Link
+                    className={`${location.pathname === '/'
+                        ? 'text-blue-300'
+                        : 'text-white'}
+                        text-2xl block mt-2 hover:text-blue-300 text-white font-semibold`}
+                    to="/">
+                        Clients
+                </Link>
+
+                <Link
+                    className={`${location.pathname === '/clients/new'
+                        ? 'text-blue-300'
+                        : 'text-white'}
+                        text-2xl block mt-2 hover:text-blue-300 text-white font-semibold`}
+                    to="/clients/new">
+                        New clients
+                </Link>
+
             </nav>
         </aside>
 
