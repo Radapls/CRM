@@ -11,12 +11,50 @@
  * @date Monday, 6th February 2023
  */
 
-import { useNavigate } from "react-router-dom"
+import { Form, useActionData, useNavigate } from "react-router-dom"
+import Error from "../components/Error"
+import ClientForm from "../components/Form"
+
+export async function action({ request })
+{
+  const formData = await request.formData()
+
+  const data = Object.fromEntries(formData)
+
+  const errors = []
+
+  const email = formData.get('email')
+
+  // Validation
+  if (Object.values(data).includes(''))
+  {
+    errors.push('All the fields are mandatory')
+  }
+
+  let regex = new RegExp("([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\"\(\[\]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\[[\t -Z^-~]*])");
+  if (!regex.test(email))
+  {
+    errors.push('The email is not valid')
+  }
+
+  // Return data if there some error
+  if (Object.keys(errors).length)
+  {
+    return errors
+  }
+
+  return null
+
+}
 
 const NewClient = () =>
 {
 
+  const errors = useActionData()
+
   const navigate = useNavigate()
+
+  console.log(errors)
 
   return (
     <>
@@ -25,14 +63,30 @@ const NewClient = () =>
 
       <div className="flex justify-end">
         <button
-          onClick={() => navigate(-1)}
+          onClick={() => navigate('/')}
           className="bg-blue-800 text-white px-3 py-1 font-bold uppercase rounded-md"> Back
 
         </button>
       </div>
 
       <div className="bg-white shadow rounded-md md:w-3/4 mx-auto px-5 py-10">
-        <p>Forme here</p>
+
+        {errors?.length && errors.map((error, i) => <Error key={i}>{error}</Error>)}
+
+        <Form
+          method="post"
+          noValidate>
+
+          <ClientForm />
+
+
+          <input
+            type="submit"
+            value="Register client"
+            className="mt-5 w-full bg-blue-800 p-3 uppercase font-bold text-white text-lg rounded-md"
+          />
+        </Form>
+
       </div>
     </>
   )
