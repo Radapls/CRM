@@ -6,7 +6,7 @@
  * This file, project or its parts can not be copied and/or distributed without
  * the express permission of Juan Felipe Rada.
  *
- * @file clients.js
+ * @file constants.js
  * @author Juan Felipe Rada <radapls8@gmail.com>
  * @date Monday, 6th February 2023
  */

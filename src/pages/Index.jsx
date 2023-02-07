@@ -13,7 +13,7 @@
 
 import { useLoaderData } from 'react-router-dom';
 import Client from "../components/Client";
-import clients from "../constants/clients";
+import clients from "../constants/constants";
 
 export function loader()
 {
@@ -42,8 +42,11 @@ function Index()
             </thead>
 
             <tbody>
-              {clients.map(client => (
-                <Client client={client} key={client.id} />
+              {clients.map((client) => (
+                <Client
+                  key={client.id}
+                  client={client}
+                />
               ))}
             </tbody>
 
