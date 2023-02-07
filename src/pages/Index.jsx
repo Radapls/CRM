@@ -12,25 +12,27 @@
  */
 
 import { useLoaderData } from 'react-router-dom';
+import { getClients } from "../api/clients";
 import Client from "../components/Client";
-import clients from "../constants/constants";
 
 export function loader()
 {
-  return clients;
+  const clients = getClients()
+
+  return clients
 }
 
 function Index()
 {
 
-  const data = useLoaderData();
+  const clients = useLoaderData();
 
   return (
     <>
       <h1 className='font-black text-4xl text-blue-900'> Clients </h1>
       <p className='mt-3'>Manage your clients</p>
 
-      {data.length
+      {clients.length
         ? (
           <table className="w-full bg-white shadow mt-5 table-auto">
             <thead className="bg-blue-800 text-white">
