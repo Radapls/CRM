@@ -1,59 +1,11 @@
 {
   "clients": [
     {
-      "name": "Juan",
-      "company": "La casita de mi tia",
-      "email": "juan@juan.com",
-      "mobile": "32432432423",
-      "notes": "Esta nueva nota",
-      "id": 1
-    },
-    {
-      "name": "Pedro",
-      "company": "La casita de mi tia",
-      "email": "juan@juan.com",
-      "mobile": "32432432423",
-      "notes": "Just for ask",
-      "id": 2
-    },
-    {
-      "name": "Miguel",
-      "company": "La casita de mi tia",
-      "email": "juan@juan.com",
-      "mobile": "32432432423",
-      "notes": "Give me more",
-      "id": 3
-    },
-    {
-      "name": "Santiago",
-      "company": "La casita de mi tia",
-      "email": "juan@juan.com",
-      "mobile": "32432432423",
-      "notes": "Teste",
-      "id": 4
-    },
-    {
-      "name": "Juanita",
-      "company": "Mejor esta",
-      "email": "juan@juan.com",
-      "mobile": "32432432423",
-      "notes": "Nueva nota",
-      "id": 5
-    },
-    {
-      "name": "Juan",
-      "company": "Wiboo",
-      "email": "j.f.r.a1997@gmail.com",
-      "mobile": "12956358952",
-      "notes": "Un test",
-      "id": 6
-    },
-    {
       "name": "Karen",
       "company": "La factoria",
       "email": "karen@karen.com",
       "mobile": "423432423",
-      "notes": "Ella es una maniatica",
+      "notes": "New service",
       "id": 7
     }
   ]

@@ -12,6 +12,7 @@
  */
 
 import { createBrowserRouter } from 'react-router-dom';
+import { action as DeleteClientAction } from './components/Client';
 import ErrorPage from "./components/ErrorPage";
 import Layout from './components/Layout';
 import EditClient, { action as EdictClientAction, loader as loaderEditClient } from "./pages/EditClient";
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
                 loader: loaderEditClient,
                 action: EdictClientAction,
                 errorElement: <ErrorPage />
+            },
+            {
+                path: 'clients/:clientId/delete',
+                action: DeleteClientAction
             }
         ]
     }
