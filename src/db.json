@@ -1,12 +1,3 @@
 {
-  "clients": [
-    {
-      "name": "Karen",
-      "company": "La factoria",
-      "email": "karen@karen.com",
-      "mobile": "423432423",
-      "notes": "New service",
-      "id": 7
-    }
-  ]
+  "clients": []
 }
