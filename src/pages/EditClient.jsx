@@ -6,15 +6,23 @@
  * This file, project or its parts can not be copied and/or distributed without
  * the express permission of Juan Felipe Rada.
  *
- * @file clients.jsx
+ * @file EditClient.jsx
  * @author Juan Felipe Rada <radapls8@gmail.com>
- * @date Monday, 6th February 2023
+ * @date Tuesday, 7th February 2023
  */
 
-
-export async function getClients()
+export async function loader({ params })
 {
-    const response = await fetch(import.meta.env.VITE_API_URL)
-    const result = await response.json()
-    return result
+    console.log(params)
+
+    return {}
 }
+
+function EditClient()
+{
+    return (
+        <div>EditClient</div>
+    )
+}
+
+export default EditClient

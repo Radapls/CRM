@@ -11,7 +11,8 @@
  * @date Monday, 6th February 2023
  */
 
-import { Form, useActionData, useNavigate } from "react-router-dom"
+import { Form, redirect, useActionData, useNavigate } from "react-router-dom"
+import { createClient } from "../api/clients"
 import Error from "../components/Error"
 import ClientForm from "../components/Form"
 
@@ -43,8 +44,9 @@ export async function action({ request })
     return errors
   }
 
-  return null
+  await createClient(data)
 
+  return redirect('/')
 }
 
 const NewClient = () =>
