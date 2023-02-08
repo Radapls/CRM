@@ -1,4 +1,5 @@
 <h1 align="center">
+<img  alt="Frontend" src="src/img/logo-white.png" width="20px">
     CRM Radapls
 </h1>
 
@@ -20,7 +21,7 @@
 <br>
 
 <p align="center">
-  <img alt="Frontend" src="src/img/banner.png" width="50%">
+  <img alt="Frontend" src="src/img/banner.jpg" width="50%">
 </p>
 
 ## :rocket: Technologies
