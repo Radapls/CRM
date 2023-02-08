@@ -12,6 +12,7 @@
  */
 
 import { Link, Outlet, useLocation } from 'react-router-dom'
+import BrandImage from '../img/logo-white.png'
 
 function Layout()
 {
@@ -22,7 +23,10 @@ function Layout()
         <div className='md:flex md:min-h-screen'>
 
             <aside className='md:w-1/4 bg-blue-900 px-5 py-10'>
-                <h2 className='text-4xl font-black text-center text-white'>CRM - Clients</h2>
+                <div className="flex space-x-4 items-center">
+                    <img className="w-12" src={BrandImage} alt="Brand" />
+                    <h2 className='text-4xl font-black text-center text-white'>CRM Radapls</h2>
+                </div>
 
                 <nav className='mt-10'>
                     <Link
