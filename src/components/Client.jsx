@@ -4,7 +4,7 @@ function Client({ client })
 {
     const navigate = useNavigate()
 
-    const { name, company, email, mobile, id } = client;
+    const { name, company, email, mobile, id, notes } = client;
 
     return (
         <tr className="border-b">
@@ -21,6 +21,12 @@ function Client({ client })
                 <p className="text-gray-600">
                     <span className="text-gray-800 uppercase font-bold">Cellphone: </span> {mobile}
                 </p>
+            </td>
+
+            <td className="p-6 text-center">
+                <div className="w-full p-5 border rounded-md border-blue-800 border-solid italic bg-slate-50 cursor-pointer">
+                    <p className="text-gray-600 font-semibold"> {notes}</p>
+                </div>
             </td>
 
             <td className="p-6 flex gap-3 justify-center">
